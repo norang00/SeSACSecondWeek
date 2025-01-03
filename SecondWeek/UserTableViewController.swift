@@ -8,19 +8,20 @@
 import UIKit
 import Kingfisher
 
-struct Friend {
-    let name: String
-    let message: String
-    let profileImage: String
-}
-
 class UserTableViewController: UITableViewController {
     
-    let friends = FriendsInfo().list
+    var friends = FriendsInfo().list
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    // @objc 가 붙어있어야 #selector 에서 호출 했을 때 응답할 수 있다.
+    @objc func likeButtonTapped(_ sender: UIButton) {
+
+        friends[sender.tag].like.toggle()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -37,6 +38,14 @@ class UserTableViewController: UITableViewController {
         let row = friends[indexPath.row]
         
         cell.likeButton.setImage(UIImage(systemName: row.like ? "heart.fill":"heart"), for: .normal)
+        cell.likeButton.tag = indexPath.row
+        
+        // IBAction 대신 코드로 연결한다
+        // Function Types 관련된 문법으로, 함수 호출에 괄호가 불필요
+        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        // target: 주로 self
+        // action: 실행할 메서드 (Selector 라는건 Obj-C 의 잔재...)
+        // for: 조작
         
         if let image = row.profile_image {
             let imageURL = URL(string: image)
