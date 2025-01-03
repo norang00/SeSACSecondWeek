@@ -9,6 +9,7 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
 
+    @IBOutlet var likeButton: UIButton!
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var userMessageLabel: UILabel!

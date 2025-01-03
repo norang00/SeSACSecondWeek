@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qbq-hk-K2l">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,6 +46,17 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1I-gH-JIB">
+                                            <rect key="frame" x="16" y="8" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="CME-Ls-PHm"/>
+                                                <constraint firstAttribute="width" secondItem="B1I-gH-JIB" secondAttribute="height" multiplier="1:1" id="tH0-1g-okM"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="pencil.tip.crop.circle.fill" catalog="system">
+                                                <color key="baseForegroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </buttonConfiguration>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="ICR-cB-Ggs" secondAttribute="bottom" constant="8" id="4Ea-s9-bCk"/>
@@ -53,10 +64,13 @@
                                         <constraint firstItem="ICR-cB-Ggs" firstAttribute="leading" secondItem="4eG-Ur-FU9" secondAttribute="leading" constant="16" id="9bY-3V-xXJ"/>
                                         <constraint firstItem="NHj-r3-gc5" firstAttribute="centerY" secondItem="4eG-Ur-FU9" secondAttribute="centerY" id="IvT-6O-goC"/>
                                         <constraint firstItem="NHj-r3-gc5" firstAttribute="leading" secondItem="ICR-cB-Ggs" secondAttribute="trailing" constant="16" id="UsB-Ln-WYm"/>
+                                        <constraint firstItem="B1I-gH-JIB" firstAttribute="leading" secondItem="ICR-cB-Ggs" secondAttribute="leading" id="Z7r-oi-gWp"/>
+                                        <constraint firstItem="B1I-gH-JIB" firstAttribute="top" secondItem="ICR-cB-Ggs" secondAttribute="top" id="fVU-9L-XrN"/>
                                         <constraint firstAttribute="trailing" secondItem="NHj-r3-gc5" secondAttribute="trailing" constant="16" id="iAJ-Vi-77h"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="likeButton" destination="B1I-gH-JIB" id="gr7-OV-ziz"/>
                                     <outlet property="userImageView" destination="ICR-cB-Ggs" id="C7T-TK-YHT"/>
                                     <outlet property="userMessageLabel" destination="OTs-RR-crE" id="jAh-ub-hMt"/>
                                     <outlet property="userNameLabel" destination="fP2-BE-TqE" id="gy7-yy-LSm"/>
@@ -75,6 +89,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pencil.tip.crop.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

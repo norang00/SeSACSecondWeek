@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 struct Friend {
     let name: String
@@ -15,15 +16,7 @@ struct Friend {
 
 class UserTableViewController: UITableViewController {
     
-    let friends: [Friend] = [
-        Friend(name: "민지", message: "고래밥 냠냠", profileImage: "star"),
-        Friend(name: "하니", message: "행복한 하루", profileImage: "pencil"),
-        Friend(name: "다니엘", message: "배고프당", profileImage: "star.fill")
-    ]
-
-//    var name = ["고래밥", "칙촉", "카스타드"]
-//    let message = ["고래밥 냠냠", "행복한 하루", "배고프당 카스타드 맛있겠다"]
-//    let profile = ["star", "pencil", "star.fill"]
+    let friends = FriendsInfo().list
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +24,6 @@ class UserTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
@@ -42,9 +34,19 @@ class UserTableViewController: UITableViewController {
         // as! 를 통해 별도 정의한 swift 파일을 매칭 해주어야 한다
         // 커스텀 셀의 경우에는 indexPath도 넣어주어야 함
      
-        cell.userImageView.image = UIImage(systemName: "\(friends[indexPath.row].profileImage)")
-        cell.userNameLabel.text = friends[indexPath.row].name
-        cell.userMessageLabel.text = "\(friends[indexPath.row].message)"
+        let row = friends[indexPath.row]
+        
+        cell.likeButton.setImage(UIImage(systemName: row.like ? "heart.fill":"heart"), for: .normal)
+        
+        if let image = row.profile_image {
+            let imageURL = URL(string: image)
+            cell.userImageView.kf.setImage(with: imageURL)
+        } else {
+            //기본 이미지
+            cell.userImageView.image = UIImage(systemName: "star")
+        }
+        cell.userNameLabel.text = row.name
+        cell.userMessageLabel.text = row.message
         
         cell.userNameLabel.font = .boldSystemFont(ofSize: 15)
         cell.userMessageLabel.font = .systemFont(ofSize: 15)
