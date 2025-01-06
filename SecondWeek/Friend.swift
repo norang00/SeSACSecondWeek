@@ -19,7 +19,7 @@ struct FriendsInfo {
     let list: [Friends] = [
         Friends(
             name: "김민준",
-            message: "오늘도 행복하세요 ☺️",
+            message: "오늘도 행복하세요 ☺️오늘도 행복하세요 ☺️오늘도 행복하세요 ☺️",
             profile_image: "https://picsum.photos/id/1/200/200",
             phone: 12345678,
             like: true
@@ -40,7 +40,7 @@ struct FriendsInfo {
         ),
         Friends(
             name: "최예린",
-            message: "인생은 단 한 번뿐이니까",
+            message: "인생은 단 한 번뿐이니까인생은 단 한 번뿐이니까인생은 단 한 번뿐이니까인생은 단 한 번뿐이니까인생은 단 한 번뿐이니까인생은 단 한 번뿐이니까인생은 단 한 번뿐이니까",
             profile_image: nil,
             phone: 45678901,
             like: true
@@ -68,7 +68,7 @@ struct FriendsInfo {
         ),
         Friends(
             name: "송미나",
-            message: "꿈을 향해 한 걸음씩",
+            message: "꿈을 향해 한 걸음씩꿈을 향해 한 걸음씩꿈을 향해 한 걸음씩꿈을 향해 한 걸음씩꿈을 향해 한 걸음씩꿈을 향해 한 걸음씩꿈을 향해 한 걸음씩",
             profile_image: "https://picsum.photos/id/60/200/200",
             phone: 78901234,
             like: true

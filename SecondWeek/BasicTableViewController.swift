@@ -10,7 +10,7 @@ import UIKit
 class BasicTableViewController: UITableViewController {
     // 원래는 Outlet 다 만들어주어야 하지만 지금은 일단 애플이 해둔거 쓰면 되어서 안해도 됨~
     
-    var list: [String] = ["프로젝트", "메인 업무", "새싹 과제"] {
+    var list: [String] = ["프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트", "메인 업무", "새싹 과제", "프로젝트", "메인 업무", "새싹 과제", "프로젝트", "메인 업무", "새싹 과제", "프로젝트프로젝트프로젝트프로젝트프로젝트프로젝트", "메인 업무", "새싹 과제", "프로젝트", "메인 업무", "새싹 과제", "프로젝트프로젝트프로젝트", "메인 업무", "새싹 과제"] {
         didSet {
             tableView.reloadData()
         }
@@ -18,6 +18,11 @@ class BasicTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        
         
         //let monster = Monster() // 초기화 한다 = 인스턴스를 생성했다
         
@@ -47,6 +52,7 @@ class BasicTableViewController: UITableViewController {
     // 2. 셀 디자인 및 데이터 처리 : cellForRowAt
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "norangCell")!
+        cell.textLabel?.numberOfLines = 0
         cell.textLabel?.textColor = .black
         cell.textLabel?.font = .systemFont(ofSize: 18)
         // textLabel? detailTextLabel?
