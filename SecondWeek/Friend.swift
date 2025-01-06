@@ -13,6 +13,12 @@ struct Friends {
     let profile_image: String?
     let phone: Int?
     var like: Bool
+    
+    var nameDescription: String {
+        get {
+            return  "이름: \(name), \(message?.count)"
+        }
+    }
 }
 
 struct FriendsInfo {

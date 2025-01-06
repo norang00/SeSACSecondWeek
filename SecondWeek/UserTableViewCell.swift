@@ -11,6 +11,8 @@ import Kingfisher
 // 그래도 쓰는 파일에 명시적으로 남겨주자!
 
 class UserTableViewCell: UITableViewCell {
+    
+    static let identifier = "UserTableViewCell"
 
     @IBOutlet var likeButton: UIButton!
     
@@ -30,6 +32,7 @@ class UserTableViewCell: UITableViewCell {
     
     // 셀을 재사용하려고 할 때 한번씩 호출해주기 때문에, 여기 기본값 등등 넣어주면 너무 좋다/
     override func prepareForReuse() {
+        super.prepareForReuse()
         print(#function)
         userImageView.image = UIImage(systemName: "star")
     }
@@ -57,7 +60,7 @@ class UserTableViewCell: UITableViewCell {
 //            userImageView.image = UIImage(systemName: "star")
 //        }
         
-        userNameLabel.text = row.name
+        userNameLabel.text = row.nameDescription
         userMessageLabel.text = row.message
         
         
