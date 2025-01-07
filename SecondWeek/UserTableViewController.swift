@@ -21,6 +21,28 @@ class UserTableViewController: UITableViewController {
 //        // XIB 로 별도로 만든 Cell 은 아직 모르니까 테이블뷰에 알려주어야 한다 (register)
 //        tableView.register(nib, forCellReuseIdentifier: "NoProfileTableViewCell")
 //        // -> 해당 화면이 뜨기 전에 내가 쓸 셀 알려주기
+        
+        
+        // show 화면전환을 위해 스토리보드에서 네비게이션 임베드 해서 여기서 설정해준다
+        navigationItem.title = "타이틀"
+        
+        let image = UIImage(systemName: "star") // UIImage 의 initializer
+        let rightButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(rightBarButtonTapped))
+        navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    @objc func rightBarButtonTapped() {
+        print(#function)
+        
+        // 1. 스토리보드 특정
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        
+        // 2. 전환할 뷰컨트롤러 가져오기 (TealViewController)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TealViewController") as! TealViewController
+        
+        // 3. 화면을 전환할 방법 선택하기 - 우측에서 등장 / show / 선수조건: navigation embed / push
+        // 이때는 네비게이션 컨트롤러가 있으면 push 해주세요, 라고 해야 함
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // @objc 가 붙어있어야 #selector 에서 호출 했을 때 응답할 수 있다.
