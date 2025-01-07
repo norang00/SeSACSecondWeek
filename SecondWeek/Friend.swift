@@ -16,7 +16,7 @@ struct Friends {
     
     var nameDescription: String {
         get {
-            return  "이름: \(name), \(message?.count)"
+            return  "이름: \(name), \(message?.count ?? 0) 글자 작성"
         }
     }
 }
