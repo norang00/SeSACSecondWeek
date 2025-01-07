@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qbq-hk-K2l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="arK-Hw-Axu">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -106,6 +106,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgh-61-fUu">
+                                <rect key="frame" x="127" y="537" width="54" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="pop"/>
+                                <connections>
+                                    <action selector="popButtonTapped:" destination="WSR-jh-x8l" eventType="touchUpInside" id="Eyy-aP-ZDo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXJ-my-pFu">
+                                <rect key="frame" x="209" y="536" width="82" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="dismiss"/>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="WSR-jh-x8l" eventType="touchUpInside" id="hMi-SH-ywf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0PE-QI-eXv"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -128,18 +146,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaG-mj-eaS">
-                                <rect key="frame" x="158.66666666666666" y="406.66666666666669" width="76" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaG-mj-eaS">
+                                <rect key="frame" x="184.33333333333334" y="406.66666666666669" width="24.666666666666657" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-Sm-8DH">
+                                <rect key="frame" x="146.66666666666666" y="495.66666666666674" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="KQx-6N-9kO"/>
+                                    <constraint firstAttribute="height" constant="35" id="MHk-Fe-HUe"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Dismiss"/>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="WjL-ke-Jck" eventType="touchUpInside" id="BpZ-7V-fSF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMj-oJ-Yon">
+                                <rect key="frame" x="146.66666666666666" y="321.66666666666669" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="b0y-Bb-WNv"/>
+                                    <constraint firstAttribute="height" constant="35" id="j2C-bU-lvp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Pop"/>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="WjL-ke-Jck" eventType="touchUpInside" id="34w-T3-1jV"/>
+                                    <action selector="popButtonTapped:" destination="WjL-ke-Jck" eventType="touchUpInside" id="J0E-ea-c4H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FKB-Uq-mkg"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="oaG-mj-eaS" firstAttribute="centerY" secondItem="wl1-jf-th4" secondAttribute="centerY" id="A8z-SN-BUI"/>
                             <constraint firstItem="oaG-mj-eaS" firstAttribute="centerX" secondItem="wl1-jf-th4" secondAttribute="centerX" id="IuV-Qu-wlp"/>
+                            <constraint firstItem="KMj-oJ-Yon" firstAttribute="centerX" secondItem="wl1-jf-th4" secondAttribute="centerX" id="P1f-fd-uoL"/>
+                            <constraint firstItem="8NG-Sm-8DH" firstAttribute="top" secondItem="oaG-mj-eaS" secondAttribute="bottom" constant="50" id="To6-XG-Fu1"/>
+                            <constraint firstItem="oaG-mj-eaS" firstAttribute="top" secondItem="KMj-oJ-Yon" secondAttribute="bottom" constant="50" id="c1u-6X-wbe"/>
+                            <constraint firstItem="8NG-Sm-8DH" firstAttribute="centerX" secondItem="wl1-jf-th4" secondAttribute="centerX" id="oQe-gL-Nsx"/>
                         </constraints>
                     </view>
                 </viewController>

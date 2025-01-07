@@ -34,15 +34,26 @@ class UserTableViewController: UITableViewController {
     @objc func rightBarButtonTapped() {
         print(#function)
         
+//        // 1. 스토리보드 특정
+//        let storyboard = UIStoryboard(name: "User", bundle: nil)
+//        
+//        // 2. 전환할 뷰컨트롤러 가져오기 (TealViewController)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "TealViewController") as! TealViewController
+//        
+//        // 3. 화면을 전환할 방법 선택하기 - 우측에서 등장 / show / 선수조건: navigation embed / push
+//        // 이때는 네비게이션 컨트롤러가 있으면 push 해주세요, 라고 해야 함
+//        navigationController?.pushViewController(vc, animated: true)
+
+        
         // 1. 스토리보드 특정
         let storyboard = UIStoryboard(name: "User", bundle: nil)
         
         // 2. 전환할 뷰컨트롤러 가져오기 (TealViewController)
-        let vc = storyboard.instantiateViewController(withIdentifier: "TealViewController") as! TealViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "YellowViewController") as! YellowViewController
         
-        // 3. 화면을 전환할 방법 선택하기 - 우측에서 등장 / show / 선수조건: navigation embed / push
-        // 이때는 네비게이션 컨트롤러가 있으면 push 해주세요, 라고 해야 함
         navigationController?.pushViewController(vc, animated: true)
+        
+
     }
     
     // @objc 가 붙어있어야 #selector 에서 호출 했을 때 응답할 수 있다.
