@@ -106,6 +106,13 @@ class UserTableViewController: UITableViewController {
         // let vc = TealViewController() -> 코드베이스로 쓸 때는 이렇게 씀
         let vc = storyboard.instantiateViewController(withIdentifier: "TealViewController") as! TealViewController
         
+        // + fullscreen 으로 하고 싶을 때
+        vc.modalPresentationStyle = .fullScreen
+        // fullScreen 으로 하면 swipe 제스처가 안되다 보니 꼭 버튼을 구현해주어야 한다
+        
+        vc.modalTransitionStyle = .flipHorizontal
+        // presentation style 에 따라 transition style 이 적용되지 않는 경우도 있다.
+        
         // 3. 화면을 전환할 방법 선택하기 - 아래에서 위로 / modal / present
         present(vc, animated: true)
         
