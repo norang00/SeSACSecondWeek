@@ -8,9 +8,9 @@
 import UIKit
 
 class UserTableViewController: UITableViewController {
-    
+        
     var friends = FriendsInfo().list
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,9 +60,29 @@ class UserTableViewController: UITableViewController {
         
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(#function)
+        
+        // 1. 스토리보드 특정
+        let storyboard = UIStoryboard(name: "User", bundle: nil)
+        // Bundle 이 뜻하는 것은? 해당 폴더 하위가 다 번들임.
+        // 내가 가지고 있는 파일 말고 Kingfisher 등 패키지를 쓸 때 사용한다. nil 로 두면 "내거 쓸거야" 하는 것이다
+
+        // 2. 전환할 뷰컨트롤러 가져오기 (TealViewController)
+        // let vc = TealViewController() -> 코드베이스로 쓸 때는 이렇게 씀
+        let vc = storyboard.instantiateViewController(withIdentifier: "TealViewController") as! TealViewController
+        
+        // 3. 화면을 전환할 방법 선택하기 - 아래에서 위로 / modal / present
+        present(vc, animated: true)
+        
+        // 4. selected 상태가 남아있을테니 다시 로드 하면서 해지해줌
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+
+    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
 }
